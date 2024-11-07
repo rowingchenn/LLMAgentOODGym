@@ -1,12 +1,11 @@
 # LLMAgentOODGym
-OOD benchmark study for LLM agents based on BrowserGym and AgentLab from ServiceNow.
+OOD benchmark study for LLM agents based on BrowserGym and AgentLab.
 
 ## Prerequisites
 
 Make sure you have the following installed:
 - [Git](https://git-scm.com/downloads)
 - [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
-
 
 ## Setting up the Environment
 
@@ -37,7 +36,7 @@ This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need
 1. **Clone the BrowserGym repository**:
 
    ```bash
-   git clone https://github.com/ServiceNow/BrowserGym.git
+   git clone https://github.com/rowingchenn/BrowserGym_OOD.git
    ```
 
 2. **Navigate to the BrowserGym directory** and install it in editable mode:
@@ -52,7 +51,7 @@ This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need
 1. **Clone the AgentLab repository**:
 
    ```bash
-   git clone git@github.com:ServiceNow/AgentLab.git
+   git clone git@github.com:rowingchenn/AgentLab_OOD.git
    ```
 
 2. **Navigate to the AgentLab directory** and install it in editable mode:
@@ -100,8 +99,6 @@ The project requires certain environment variables to be configured. You can add
 
 This ensures all required environment variables are set every time you start a new terminal session.
 
-
-
 ## Git
 
 This project uses Git with submodules. Follow the instructions below to work with the main repository and its submodules.
@@ -122,14 +119,16 @@ git submodule update --init --recursive
 ```
 
 ### 2. Making Changes in a Submodule
-We have two submodules, `agent_lab` and `browser_gym`, which correspond to two projects from ServiceNow:
 
-- [AgentLab](https://github.com/ServiceNow/AgentLab.git)
-- [BrowserGym](https://github.com/ServiceNow/BrowserGym.git)
+We have two submodules, `agent_lab` and `browser_gym`:
 
-Our goal is to merge new code from ServiceNow into our project and make our own modifications, which will be pushed to this repository instead of their repositories.
+- [AgentLab](https://github.com/rowingchenn/AgentLab_OOD.git)
+- [BrowserGym](https://github.com/rowingchenn/BrowserGym_OOD.git)
+
+Our goal is to merge new code from ServiceNow into our project and make our own modifications, which will be pushed to our own forked repositories.
 
 Here are the working guides, taking agent_lab for example:
+
 1. Navigate to the submodule's directory:
 
    ```bash
@@ -146,6 +145,30 @@ Here are the working guides, taking agent_lab for example:
 
    ```bash
    git commit -m "Your commit message in the submodule"
+   ```
+
+4. Push the changes to the submodule's remote repository:
+
+   ```bash
+   git push origin main
+   ```
+
+5. Sync with the upstream repository (ServiceNow):
+
+   *This operation is generally performed by Weichen.*
+
+   To keep your fork up to date with the original repository, add the upstream remote if you haven't already:
+
+   ```bash
+   git remote add upstream git@github.com:ServiceNow/AgentLab.git
+   ```
+
+   Fetch and merge changes from the upstream repository:
+
+   ```bash
+   git fetch upstream
+   git merge upstream/main
+   git push origin main
    ```
 
 ### 3. Update the Main Repository to Track Submodule Changes
@@ -168,28 +191,22 @@ Here are the working guides, taking agent_lab for example:
    git commit -m "Update submodule to latest commit"
    ```
 
-### 4. Push Changes to Remote Repositories
+4. Push the changes in the main repository:
 
-#### Push Submodule Changes
+   ```bash
+   git push origin main
+   ```
 
-We don't want to do that.
+### 4. Pulling Changes with Submodules
 
-#### Push Main Repository Changes
-
-Then, push the changes from the main repository:
-
-```bash
-cd LLMAgentOODGym
-git push origin main
-```
-
-5. Pulling Changes with Submodules
 Before committing your code to the remote repository, always execute the following commands to ensure your code is fully up-to-date and conflicts are resolved:
 
 ```bash
 git pull --recurse-submodules
 git submodule update --remote --recursive
 ```
+
 Run these commands, carefully resolve any conflicts that arise, and then proceed with your commit and push to the remote repository. This approach helps maintain compatibility with the latest changes in both the main repository and submodules.
 
 ## License
+

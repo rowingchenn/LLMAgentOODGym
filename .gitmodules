@@ -1,6 +1,6 @@
 [submodule "agent_lab"]
 	path = agent_lab
-	url = git@github.com:ServiceNow/AgentLab.git
+	url = git@github.com:rowingchenn/AgentLab_OOD.git
 [submodule "browser_gym"]
 	path = browser_gym
-	url = git@github.com:ServiceNow/BrowserGym.git
+	url = git@github.com:rowingchenn/BrowserGym_OOD.git
