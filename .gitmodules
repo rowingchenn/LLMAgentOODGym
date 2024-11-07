@@ -1,0 +1,3 @@
+[submodule "agent_lab"]
+	path = agent_lab
+	url = git@github.com:ServiceNow/AgentLab.git
