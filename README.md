@@ -7,98 +7,6 @@ Make sure you have the following installed:
 - [Git](https://git-scm.com/downloads)
 - [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
 
-## Setting up the Environment
-
-### 1. Create a New Conda Environment
-
-To set up the environment, first create a new Conda environment. Run the following command:
-
-```bash
-conda create -n <environment_name> python=3.12.7
-```
-
-Replace `<environment_name>` with a name of your choice for the new environment.
-
-### 2. Activate the Conda Environment
-
-Once the environment has been created, activate it using:
-
-```bash
-conda activate <environment_name>
-```
-
-### 3. Install Dependencies for Each Subproject
-
-This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need to install each subproject in editable mode to ensure that any local code changes are reflected immediately.
-
-#### 3.1 Install BrowserGym
-
-1. **Clone the BrowserGym repository**:
-
-   ```bash
-   git clone https://github.com/rowingchenn/BrowserGym_OOD.git
-   ```
-
-2. **Navigate to the BrowserGym directory** and install it in editable mode:
-
-   ```bash
-   cd browser_gym
-   make install
-   ```
-
-#### 3.2 Install AgentLab
-
-1. **Clone the AgentLab repository**:
-
-   ```bash
-   git clone git@github.com:rowingchenn/AgentLab_OOD.git
-   ```
-
-2. **Navigate to the AgentLab directory** and install it in editable mode:
-
-   ```bash
-   cd agent_lab
-   pip install -e .
-   ```
-
-### 4. Configure Environment Variables
-
-The project requires certain environment variables to be configured. You can add these variables to your `.bashrc` file so they are automatically loaded each time you start a new terminal session.
-
-1. **Open `.bashrc` in an editor**:
-
-   ```bash
-   vim ~/.bashrc
-   ```
-
-2. **Add the following environment variables to the end of `.bashrc`**:
-
-   ```bash
-   export SNOW_INSTANCE_URL="https://dev245396.service-now.com/"
-   export SNOW_INSTANCE_UNAME="admin"
-   export SNOW_INSTANCE_PWD="F/sNP0cY=g5x"
-   export OPENAI_API_KEY="<Your_OpenAI_API_Key>"
-   export OPENAI_API_BASE="https://api.shubiaobiao.cn/v1/"
-
-   BASE_URL="http://ec2-3-131-244-37.us-east-2.compute.amazonaws.com"
-
-   export WA_SHOPPING="$BASE_URL:7770/"
-   export WA_SHOPPING_ADMIN="$BASE_URL:7780/admin"
-   export WA_REDDIT="$BASE_URL:9999"
-   export WA_GITLAB="$BASE_URL:8023"
-   export WA_WIKIPEDIA="$BASE_URL:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing"
-   export WA_MAP="$BASE_URL:3000"
-   export WA_HOMEPAGE="$BASE_URL:4399"
-   ```
-
-3. **Apply the changes** by running:
-
-   ```bash
-   source ~/.bashrc
-   ```
-
-This ensures all required environment variables are set every time you start a new terminal session.
-
 ## Git
 
 This project uses Git with submodules. Follow the instructions below to work with the main repository and its submodules.
@@ -207,6 +115,87 @@ git submodule update --remote --recursive
 ```
 
 Run these commands, carefully resolve any conflicts that arise, and then proceed with your commit and push to the remote repository. This approach helps maintain compatibility with the latest changes in both the main repository and submodules.
+
+## Setting up the Environment
+
+### 1. Create a New Conda Environment
+
+To set up the environment, first create a new Conda environment. Run the following command:
+
+```bash
+conda create -n <environment_name> python=3.12.7
+```
+
+Replace `<environment_name>` with a name of your choice for the new environment.
+
+### 2. Activate the Conda Environment
+
+Once the environment has been created, activate it using:
+
+```bash
+conda activate <environment_name>
+```
+
+### 3. Install Dependencies for Each Subproject
+
+This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need to install each subproject in editable mode to ensure that any local code changes are reflected immediately.
+
+#### 3.1 Install BrowserGym
+
+**Navigate to the BrowserGym directory** and install it in editable mode:
+
+   ```bash
+   cd browser_gym
+   make install
+   ```
+
+#### 3.2 Install AgentLab
+
+**Navigate to the AgentLab directory** and install it in editable mode:
+
+   ```bash
+   cd agent_lab
+   pip install -e .
+   ```
+
+### 4. Configure Environment Variables
+
+The project requires certain environment variables to be configured. You can add these variables to your `.bashrc` file so they are automatically loaded each time you start a new terminal session.
+
+1. **Open `.bashrc` in an editor**:
+
+   ```bash
+   vim ~/.bashrc
+   ```
+
+2. **Add the following environment variables to the end of `.bashrc`**:
+
+   ```bash
+   export SNOW_INSTANCE_URL="https://dev245396.service-now.com/"
+   export SNOW_INSTANCE_UNAME="admin"
+   export SNOW_INSTANCE_PWD="F/sNP0cY=g5x"
+   export OPENAI_API_KEY="<Your_OpenAI_API_Key>"
+   export OPENAI_API_BASE="https://api.shubiaobiao.cn/v1/"
+
+   BASE_URL="http://ec2-3-131-244-37.us-east-2.compute.amazonaws.com"
+
+   export WA_SHOPPING="$BASE_URL:7770/"
+   export WA_SHOPPING_ADMIN="$BASE_URL:7780/admin"
+   export WA_REDDIT="$BASE_URL:9999"
+   export WA_GITLAB="$BASE_URL:8023"
+   export WA_WIKIPEDIA="$BASE_URL:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing"
+   export WA_MAP="$BASE_URL:3000"
+   export WA_HOMEPAGE="$BASE_URL:4399"
+   ```
+
+3. **Apply the changes** by running:
+
+   ```bash
+   source ~/.bashrc
+   ```
+
+This ensures all required environment variables are set every time you start a new terminal session.
+
 
 ## License
 
