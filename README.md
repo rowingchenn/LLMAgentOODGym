@@ -158,6 +158,17 @@ This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need
    pip install -e .
    ```
 
+#### 3.3 Install WorkArena
+
+**Navigate to the WorkArena directory** and install it in editable mode:
+
+   ```bash
+   cd work_arena
+   pip install -e .
+   ```
+
+You don't need to run workarena-install since the instance of ServiceNow has already set up. You can access the instance by setting the SNOW_INSTANCE_URL, SNOW_INSTANCE_UNAME and SNOW_INSTANCE_PWD environment variables below.
+
 ### 4. Configure Environment Variables
 
 The project requires certain environment variables to be configured. You can add these variables to your `.bashrc` file so they are automatically loaded each time you start a new terminal session.
