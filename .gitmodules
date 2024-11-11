@@ -1,6 +1,6 @@
 [submodule "agent_ood_lab"]
-	path = agent_lab
+	path = agent_ood_lab
 	url = git@github.com:rowingchenn/agent-ood-lab.git
 [submodule "agent_ood_gym"]
-	path = browser_gym
+	path = agent_ood_gym
 	url = git@github.com:rowingchenn/agent-ood-gym.git
