@@ -4,3 +4,6 @@
 [submodule "browser_gym"]
 	path = browser_gym
 	url = git@github.com:rowingchenn/BrowserGym_OOD.git
+[submodule "work_arena"]
+	path = work_arena
+	url = git@github.com:rowingchenn/WorkArena_OOD.git
