@@ -40,7 +40,7 @@ Here are the working guides, taking agent_lab for example:
 1. Navigate to the submodule's directory:
 
    ```bash
-   cd agent_lab
+   cd agent_ood_lab
    ```
 
 2. Make your changes and stage them:
@@ -61,51 +61,7 @@ Here are the working guides, taking agent_lab for example:
    git push origin main
    ```
 
-5. Sync with the upstream repository (ServiceNow):
-
-   *This operation is generally performed by Weichen.*
-
-   To keep your fork up to date with the original repository, add the upstream remote if you haven't already:
-
-   ```bash
-   git remote add upstream git@github.com:ServiceNow/AgentLab.git
-   ```
-
-   Fetch and merge changes from the upstream repository:
-
-   ```bash
-   git fetch upstream
-   git merge upstream/main
-   git push origin main
-   ```
-
-### 3. Update the Main Repository to Track Submodule Changes
-
-1. Go back to the main repository’s root directory:
-
-   ```bash
-   cd ..
-   ```
-
-2. Stage the submodule update in the main repository:
-
-   ```bash
-   git add path/to/submodule
-   ```
-
-3. Commit the update in the main repository:
-
-   ```bash
-   git commit -m "Update submodule to latest commit"
-   ```
-
-4. Push the changes in the main repository:
-
-   ```bash
-   git push origin main
-   ```
-
-### 4. Pulling Changes with Submodules
+### 3. Pulling Changes with Submodules
 
 Before committing your code to the remote repository, always execute the following commands to ensure your code is fully up-to-date and conflicts are resolved:
 
@@ -145,7 +101,7 @@ This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need
 **Navigate to the BrowserGym directory** and install it in editable mode:
 
    ```bash
-   cd browser_gym
+   cd agent_ood_gym
    make install
    ```
 
@@ -154,7 +110,7 @@ This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need
 **Navigate to the AgentLab directory** and install it in editable mode:
 
    ```bash
-   cd agent_lab
+   cd agent_ood_lab
    pip install -e .
    ```
 
@@ -163,7 +119,7 @@ This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need
 **Navigate to the WorkArena directory** and install it in editable mode:
 
    ```bash
-   cd work_arena
+   cd agent_ood_gym/work_arena
    pip install -e .
    ```
 
