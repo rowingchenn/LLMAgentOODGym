@@ -119,7 +119,7 @@ This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need
 **Navigate to the WorkArena directory** and install it in editable mode:
 
    ```bash
-   cd agent_ood_gym/work_arena
+   cd agent_ood_gym/agent_ood_gym/work_arena
    pip install -e .
    ```
 
