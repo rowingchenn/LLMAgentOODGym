@@ -94,24 +94,24 @@ conda activate <environment_name>
 
 ### 3. Install Dependencies for Each Subproject
 
-This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need to install each subproject in editable mode to ensure that any local code changes are reflected immediately.
+This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need to install each subproject in editable mode to ensure that any local code changes are reflected immediately. Make sure you install agent_ood_lab first and then install agent_ood_gym!
 
-#### 3.1 Install BrowserGym
-
-**Navigate to the BrowserGym directory** and install it in editable mode:
-
-   ```bash
-   cd agent_ood_gym
-   make install
-   ```
-
-#### 3.2 Install AgentLab
+#### 3.1 Install AgentLab
 
 **Navigate to the AgentLab directory** and install it in editable mode:
 
    ```bash
    cd agent_ood_lab
    pip install -e .
+   ```
+
+#### 3.2 Install BrowserGym
+
+**Navigate to the BrowserGym directory** and install it in editable mode:
+
+   ```bash
+   cd agent_ood_gym
+   make install
    ```
 
 #### 3.3 Install WorkArena
