@@ -144,7 +144,7 @@ The project requires certain environment variables to be configured. You can add
    export OPENAI_API_KEY="<Your_OpenAI_API_Key>"
    export OPENAI_API_BASE="https://api.shubiaobiao.cn/v1/"
 
-   BASE_URL="http://ec2-3-131-244-37.us-east-2.compute.amazonaws.com"
+   BASE_URL="http://gpublaze.ist.berkeley.edu"
 
    export WA_SHOPPING="$BASE_URL:7770/"
    export WA_SHOPPING_ADMIN="$BASE_URL:7780/admin"
