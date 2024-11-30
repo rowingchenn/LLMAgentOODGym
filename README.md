@@ -94,24 +94,24 @@ conda activate <environment_name>
 
 ### 3. Install Dependencies for Each Subproject
 
-This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need to install each subproject in editable mode to ensure that any local code changes are reflected immediately.
+This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need to install each subproject in editable mode to ensure that any local code changes are reflected immediately. Make sure you install agent_ood_lab first and then install agent_ood_gym!
 
-#### 3.1 Install BrowserGym
-
-**Navigate to the BrowserGym directory** and install it in editable mode:
-
-   ```bash
-   cd agent_ood_gym
-   make install
-   ```
-
-#### 3.2 Install AgentLab
+#### 3.1 Install AgentLab
 
 **Navigate to the AgentLab directory** and install it in editable mode:
 
    ```bash
    cd agent_ood_lab
    pip install -e .
+   ```
+
+#### 3.2 Install BrowserGym
+
+**Navigate to the BrowserGym directory** and install it in editable mode:
+
+   ```bash
+   cd agent_ood_gym
+   make install
    ```
 
 #### 3.3 Install WorkArena
@@ -144,7 +144,7 @@ The project requires certain environment variables to be configured. You can add
    export OPENAI_API_KEY="<Your_OpenAI_API_Key>"
    export OPENAI_API_BASE="https://api.shubiaobiao.cn/v1/"
 
-   BASE_URL="http://ec2-3-131-244-37.us-east-2.compute.amazonaws.com"
+   BASE_URL="http://gpublaze.ist.berkeley.edu"
 
    export WA_SHOPPING="$BASE_URL:7770/"
    export WA_SHOPPING_ADMIN="$BASE_URL:7780/admin"
