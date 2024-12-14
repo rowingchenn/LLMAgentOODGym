@@ -138,14 +138,17 @@ The project requires certain environment variables to be configured. You can add
 2. **Add the following environment variables to the end of `.bashrc`**:
 
    ```bash
-   export SNOW_INSTANCE_URL="https://dev245396.service-now.com/"
-   export SNOW_INSTANCE_UNAME="admin"
-   export SNOW_INSTANCE_PWD="F/sNP0cY=g5x"
+   # API config   
    export OPENAI_API_KEY="<Your_OpenAI_API_Key>"
    export OPENAI_API_BASE="https://api.shubiaobiao.cn/v1/"
 
+   # ServiceNow config
+   export SNOW_INSTANCE_URL="https://dev245396.service-now.com/"
+   export SNOW_INSTANCE_UNAME="admin"
+   export SNOW_INSTANCE_PWD="F/sNP0cY=g5x"
+   
+   # WebArena config
    BASE_URL="http://gpublaze.ist.berkeley.edu"
-
    export WA_SHOPPING="$BASE_URL:7770/"
    export WA_SHOPPING_ADMIN="$BASE_URL:7780/admin"
    export WA_REDDIT="$BASE_URL:9999"
@@ -153,6 +156,9 @@ The project requires certain environment variables to be configured. You can add
    export WA_WIKIPEDIA="$BASE_URL:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing"
    export WA_MAP="$BASE_URL:3000"
    export WA_HOMEPAGE="$BASE_URL:4399"
+
+   # AgentLab config
+   export AGENTLAB_EXP_ROOT="<root_dir>/LLMAgentOODGym/agent_ood_lab/benchmark_results"
    ```
 
 3. **Apply the changes** by running:
