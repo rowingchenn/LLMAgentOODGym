@@ -170,5 +170,18 @@ The project requires certain environment variables to be configured. You can add
 This ensures all required environment variables are set every time you start a new terminal session.
 
 
+## Run Experiments 
+### WebOOD
+Run **[this script](https://github.com/rowingchenn/agent-ood-lab/blob/6f90b859f74f7527005b7fc7387335d5c9aeacb9/main.py)** to conduct experiments in a web environment with OOD inputs. 
+
+- **Agent Selection**: Choose a pre-defined agent or specify a custom one using:  
+  ```python
+  agent_args = [AGENT]
+  ```python
+- **BenchMark Setup**: Select webarena to set up OOD inputs in the web environment:
+  ```python
+  benchmark = "webarena"
+  ```python
+   
 ## License
 
