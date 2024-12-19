@@ -177,11 +177,11 @@ Run **[this script](https://github.com/rowingchenn/agent-ood-lab/blob/6f90b859f7
 - **Agent Selection**: Choose a pre-defined agent or specify a custom one using:  
   ```python
   agent_args = [AGENT]
-  ```python
+  ```
 - **BenchMark Setup**: Select webarena to set up OOD inputs in the web environment:
   ```python
   benchmark = "webarena"
-  ```python
+  ```
    
 ## License
 
