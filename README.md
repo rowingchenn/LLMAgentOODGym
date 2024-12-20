@@ -125,6 +125,18 @@ This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need
 
 You don't need to run workarena-install since the instance of ServiceNow has already set up. You can access the instance by setting the SNOW_INSTANCE_URL, SNOW_INSTANCE_UNAME and SNOW_INSTANCE_PWD environment variables below.
 
+#### 3.4 Install EmbodiedGym
+
+   ```bash
+   pip install alfworld[full]
+   ```
+   Download PDDL & Game files and pre-trained MaskRCNN detector:
+
+   ```bash
+   export ALFWORLD_DATA=<path to: agent_ood_gym/embodiedgym/alfworld/data>
+   alfworld-download
+   ```
+
 ### 4. Configure Environment Variables
 
 The project requires certain environment variables to be configured. You can add these variables to your `.bashrc` file so they are automatically loaded each time you start a new terminal session.
