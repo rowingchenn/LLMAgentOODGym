@@ -153,5 +153,18 @@ You can configure your own LLM agents by modifying the `agent_ood_lab/src/agentl
 
 Read the [AgentLab documentation](https://github.com/ServiceNow/AgentLab) for more information.
 
+## Run Experiments 
+### WebOOD
+Run **[this script](https://github.com/rowingchenn/agent-ood-lab/blob/6f90b859f74f7527005b7fc7387335d5c9aeacb9/main.py)** to conduct experiments in a web environment with OOD inputs. 
+
+- **Agent Selection**: Choose a pre-defined agent or specify a custom one using:  
+  ```python
+  agent_args = [AGENT]
+  ```
+- **BenchMark Setup**: Select webarena to set up OOD inputs in the web environment:
+  ```python
+  benchmark = "webarena"
+  ```
+   
 ## License
 
