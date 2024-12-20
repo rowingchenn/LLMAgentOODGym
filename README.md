@@ -3,8 +3,14 @@ OOD benchmark study for LLM agents based on BrowserGym and AgentLab.
 
 Built on the [AgentLab](https://github.com/ServiceNow/AgentLab) and [BrowserGym](https://github.com/ServiceNow/BrowserGym) repositories.
 
+Submodules:
+- [OODAgentLab](https://github.com/rowingchenn/agent-ood-lab)
+- [OODBrowserGym](https://github.com/rowingchenn/agent-ood-gym)
+
 Arthor: Weichen Zhang
+
 Email: rowingchenn@berkeley.edu
+
 Coorperator: Sirui Li, Mengqi Zou, Yiming Zhang, Shujie Deng, Xinran Fang
 
 ## Prerequisites
