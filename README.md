@@ -1,17 +1,19 @@
 # LLMAgentOODGym
 OOD benchmark study for LLM agents based on BrowserGym and AgentLab.
 
+Built on the [AgentLab](https://github.com/ServiceNow/AgentLab) and [BrowserGym](https://github.com/ServiceNow/BrowserGym) repositories.
+
+Arthor: Weichen Zhang
+Email: rowingchenn@berkeley.edu
+Coorperator: Sirui Li, Mengqi Zou, Yiming Zhang, Shujie Deng, Xinran Fang
+
 ## Prerequisites
 
 Make sure you have the following installed:
 - [Git](https://git-scm.com/downloads)
 - [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
 
-## Git
-
-This project uses Git with submodules. Follow the instructions below to work with the main repository and its submodules.
-
-### 1. Clone the Main Repository and Initialize Submodules
+## Clone the Main Repository and Initialize Submodules
 
 To clone the main repository along with its submodules, use:
 
@@ -26,52 +28,6 @@ If you have already cloned the main repository without submodules, you can initi
 git submodule update --init --recursive
 ```
 
-### 2. Making Changes in a Submodule
-
-We have two submodules, `agent_lab` and `browser_gym`:
-
-- [AgentLab](https://github.com/rowingchenn/AgentLab_OOD.git)
-- [BrowserGym](https://github.com/rowingchenn/BrowserGym_OOD.git)
-
-Our goal is to merge new code from ServiceNow into our project and make our own modifications, which will be pushed to our own forked repositories.
-
-Here are the working guides, taking agent_lab for example:
-
-1. Navigate to the submodule's directory:
-
-   ```bash
-   cd agent_ood_lab
-   ```
-
-2. Make your changes and stage them:
-
-   ```bash
-   git add .
-   ```
-
-3. Commit the changes in the submodule:
-
-   ```bash
-   git commit -m "Your commit message in the submodule"
-   ```
-
-4. Push the changes to the submodule's remote repository:
-
-   ```bash
-   git push origin main
-   ```
-
-### 3. Pulling Changes with Submodules
-
-Before committing your code to the remote repository, always execute the following commands to ensure your code is fully up-to-date and conflicts are resolved:
-
-```bash
-git pull --recurse-submodules
-git submodule update --remote --recursive
-```
-
-Run these commands, carefully resolve any conflicts that arise, and then proceed with your commit and push to the remote repository. This approach helps maintain compatibility with the latest changes in both the main repository and submodules.
-
 ## Setting up the Environment
 
 ### 1. Create a New Conda Environment
@@ -79,24 +35,15 @@ Run these commands, carefully resolve any conflicts that arise, and then proceed
 To set up the environment, first create a new Conda environment. Run the following command:
 
 ```bash
-conda create -n <environment_name> python=3.12.7
-```
-
-Replace `<environment_name>` with a name of your choice for the new environment.
-
-### 2. Activate the Conda Environment
-
-Once the environment has been created, activate it using:
-
-```bash
+conda create -n oodgym python=3.12.7
 conda activate <environment_name>
 ```
 
-### 3. Install Dependencies for Each Subproject
+### 2. Install Dependencies for Each Subproject
 
 This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need to install each subproject in editable mode to ensure that any local code changes are reflected immediately. Make sure you install agent_ood_lab first and then install agent_ood_gym!
 
-#### 3.1 Install AgentLab
+#### 2.1 Install AgentLab
 
 **Navigate to the AgentLab directory** and install it in editable mode:
 
@@ -105,7 +52,7 @@ This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need
    pip install -e .
    ```
 
-#### 3.2 Install BrowserGym
+#### 2.2 Install BrowserGym
 
 **Navigate to the BrowserGym directory** and install it in editable mode:
 
@@ -114,7 +61,7 @@ This project consists of two subprojects (`BrowserGym` and `AgentLab`). You need
    make install
    ```
 
-#### 3.3 Install WorkArena
+#### 2.3 Install WorkArena[following work]
 
 **Navigate to the WorkArena directory** and install it in editable mode:
 
@@ -137,7 +84,7 @@ You don't need to run workarena-install since the instance of ServiceNow has alr
    alfworld-download
    ```
 
-### 4. Configure Environment Variables
+### 3. Configure Environment Variables
 
 The project requires certain environment variables to be configured. You can add these variables to your `.bashrc` file so they are automatically loaded each time you start a new terminal session.
 
@@ -154,7 +101,7 @@ The project requires certain environment variables to be configured. You can add
    export OPENAI_API_KEY="<Your_OpenAI_API_Key>"
    export OPENAI_API_BASE="https://api.shubiaobiao.cn/v1/"
 
-   # ServiceNow config
+   # WorkArena config[following work]
    export SNOW_INSTANCE_URL="https://dev245396.service-now.com/"
    export SNOW_INSTANCE_UNAME="admin"
    export SNOW_INSTANCE_PWD="F/sNP0cY=g5x"
@@ -171,6 +118,9 @@ The project requires certain environment variables to be configured. You can add
 
    # AgentLab config
    export AGENTLAB_EXP_ROOT="<root_dir>/LLMAgentOODGym/agent_ood_lab/benchmark_results"
+
+   # EmbodiedGym config
+   export ALFWORLD_DATA=<path to: agent_ood_gym/embodiedgym/alfworld/data>
    ```
 
 3. **Apply the changes** by running:
@@ -181,6 +131,27 @@ The project requires certain environment variables to be configured. You can add
 
 This ensures all required environment variables are set every time you start a new terminal session.
 
+## Run the Experiments
+### EmbodiedGym
+We currently only integrated Alfworld into the environment. To run the experiments, you can use the following command:
+
+```bash
+python LLMAgentOODGym/agent_ood_lab/src/agentlab/agents/testing_agent/test_embodied_ood_magic.py
+```
+
+And the results will be saved in the `AGENTLAB_EXP_ROOT` folder.
+
+### BrowserGym
+We currently only integrated WebArena into the environment. To run the experiments, you can use the following command:
+
+```bash
+python LLMAgentOODGym/agent_ood_lab/src/agentlab/experiments/graph_execution_ray.py
+```
+
+### Configure your own LLM agents
+You can configure your own LLM agents by modifying the `agent_ood_lab/src/agentlab/agents/generic_agent/agent_configs.py` file.
+
+Read the [AgentLab documentation](https://github.com/ServiceNow/AgentLab) for more information.
 
 ## License
 
