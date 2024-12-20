@@ -139,38 +139,18 @@ This ensures all required environment variables are set every time you start a n
 
 ## Run the Experiments
 ### EmbodiedGym
-We currently only integrated Alfworld into the environment. To run the experiments, you can use the following command:
-
-```bash
-python LLMAgentOODGym/agent_ood_lab/src/agentlab/agents/testing_agent/test_embodied_ood_magic.py
-```
+We currently only integrated Alfworld into the environment. To run the experiments, you can run this script: [LLMAgentOODGym/agent_ood_lab/src/agentlab/agents/testing_agent/test_embodied_ood_magic.py](https://github.com/rowingchenn/agent-ood-lab/blob/main/src/agentlab/agents/testing_agent/test_embodied_ood_magic.py)
 
 And the results will be saved in the `AGENTLAB_EXP_ROOT` folder.
 
 ### BrowserGym
-We currently only integrated WebArena into the environment. To run the experiments, you can use the following command:
+We currently only integrated WebArena into the environment. To run the experiments, you can run this script: [LLMAgentOODGym/agent_ood_lab/src/agentlab/main.py](https://github.com/rowingchenn/agent-ood-lab/blob/main/main.py)
 
-```bash
-python LLMAgentOODGym/agent_ood_lab/src/agentlab/experiments/graph_execution_ray.py
-```
 
 ### Configure your own LLM agents
-You can configure your own LLM agents by modifying the `agent_ood_lab/src/agentlab/agents/generic_agent/agent_configs.py` file.
+You can configure your own LLM agents by modifying the [agent_ood_lab/src/agentlab/agents/generic_agent/agent_configs.py](https://github.com/rowingchenn/agent-ood-lab/blob/main/src/agentlab/agents/generic_agent/agent_configs.py) file.
 
 Read the [AgentLab documentation](https://github.com/ServiceNow/AgentLab) for more information.
-
-## Run Experiments 
-### WebOOD
-Run **[this script](https://github.com/rowingchenn/agent-ood-lab/blob/6f90b859f74f7527005b7fc7387335d5c9aeacb9/main.py)** to conduct experiments in a web environment with OOD inputs. 
-
-- **Agent Selection**: Choose a pre-defined agent or specify a custom one using:  
-  ```python
-  agent_args = [AGENT]
-  ```
-- **BenchMark Setup**: Select webarena to set up OOD inputs in the web environment:
-  ```python
-  benchmark = "webarena"
-  ```
    
 ## License
 
